@@ -27,7 +27,7 @@ public class Lec11컬렉션복합 {
 //		{seq="1", title="제목1", rdate="2024-01-01", regid="kim"}
 //	    {seq="2", title="제목2", rdate="2024-01-01", regid="kim2"}
  */
-		
+//****************************************************************중요	
 		final int DATA_ROWS = 5;
 		
 		//이후에 DB에서 데이터를 가져오는 형태로 변경
@@ -52,6 +52,7 @@ public class Lec11컬렉션복합 {
 			String regid = list.get(i).get("regid");
 			System.out.println(seq + "\t" + title + "\t" + rdate + "\t" + regid);
 		}
+//*****************************************************************중요
 		
 		
 /**		

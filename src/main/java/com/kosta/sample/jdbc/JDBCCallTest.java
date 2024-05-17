@@ -13,7 +13,7 @@ import com.kosta.sample.json.EmpVO;
 import java.sql.DriverManager;
 
 public class JDBCCallTest {
-	static final String DB_URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+	static final String DB_URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE"; //ORCL 유료버전
 	static final String DB_ID = "it";
 	static final String DB_PW = "0000";
 	public static void main(String[] args) {
@@ -43,9 +43,9 @@ public class JDBCCallTest {
 			//ArrayList(EmpVO)
 			//--------------------------------------------------
 			ArrayList<EmpVO> list = new ArrayList<EmpVO>();
-			while (rs.next() == true) { // 튜플을 읽는다. 더이상 읽을게 없으면 빠져나간다. rs.next() == true 와 같다.
+			while (rs.next()) { // 튜플을 읽는다. 더이상 읽을게 없으면 빠져나간다. rs.next() == true 와 같다.
 				EmpVO vo = new EmpVO();
-				vo.setEmpno(rs.getInt("empno"));
+				vo.setEmpno(rs.getInt("empno")); //DB 컬럼
 				vo.setEname(rs.getString("ename"));
 				list.add(vo);
 			}
@@ -84,8 +84,9 @@ public class JDBCCallTest {
 		} finally {
 			
 			try {
-				rs.close();
-				pstmt.close();
+				if(rs!=null) rs.close(); // 불 필요한 catch작업을 막기위해 닫을 것이 있으면 닫는다.
+				if(pstmt!=null) pstmt.close();// 열었던 순서대로 close를 해줘야한다.
+				if(conn!=null) conn.close();
 				
 			}catch (SQLException e) {
 				e.printStackTrace();
