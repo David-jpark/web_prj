@@ -5,17 +5,26 @@ public class ReplyVO {
 	private int rseq;
 	private String reply;
 	private String regid;
-	private int regdate;
+	private String regdate;
+	private int seq; 		//FK - 
 	
 	public ReplyVO() {
 		
 	}
-	public ReplyVO(int rseq, String reply, String regid, int regdate) {
+	public ReplyVO(int rseq, String reply, String regid, String regdate, int seq) {
 		super();
 		this.rseq = rseq;
 		this.reply = reply;
 		this.regid = regid;
 		this.regdate = regdate;
+		this.seq = seq;
+	}
+	
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 	public int getRseq() {
 		return rseq;
@@ -35,18 +44,20 @@ public class ReplyVO {
 	public void setRegid(String regid) {
 		this.regid = regid;
 	}
-	public int getRegdate() {
+	public String getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(int regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
-	
 	@Override
 	public String toString() {
-		return "ReplyVO [rseq=" + rseq + ", reply=" + reply + ", regid=" + regid + ", regdate=" + regdate + "]";
+		return "ReplyVO [rseq=" + rseq + ", reply=" + reply + ", regid=" + regid + ", regdate=" + regdate + ", seq="
+				+ seq + "]";
 	}
+	
+	
+	
 	
 	
 }
