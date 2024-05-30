@@ -11,11 +11,12 @@
 <!--<a href = "http://localhost:8081/Board_servlet_url">Servlet GET 호출</a>-->
 <a href = "/Board_servlet_url">Servlet GET 호출</a><br><br>
 
-<form method = "GET" action = "/Board_servlet_url">
+<form method = "GET" action = "<%= request.getContextPath() %>/Board_servlet_url">
+	<input name = "userid" type = "text" placeholder = "아이디 입력"><br>
 	<input type = "submit" value="Servlet GET 호출">
 </form> 
 <br>
-<form method = "POST" action = "/Board_servlet_url">
+<form method = "POST" action = "<%= request.getContextPath() %>/Board_servlet_url">
 	<input name = "userid" type = "text" placeholder = "아이디 입력"><br>
 	<input name = "userpw" type = "password" placeholder = "비밀번호 입력"><br>
 	<input name = "gender" type = "radio" value = "male"> 남자 

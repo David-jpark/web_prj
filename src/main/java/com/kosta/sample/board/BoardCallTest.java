@@ -36,6 +36,16 @@ public class BoardCallTest {
 //			System.out.println(seq+"\t"+title +"\t" + contents + "\t" + regid + "\t" + regdate);
 //		}
 //		
+//		ArrayList<BoardVO> list = dao.selectBoard();
+//		System.out.println("총 :" + list.size());
+//		for(BoardVO bvo : list) {
+//			int seq = bvo.getSeq();
+//			String title = bvo.getTitle();
+//			String contents = bvo.getContents();
+//			String regid = bvo.getRegid();
+//			String regdate = bvo.getRegdate();
+//			System.out.println(seq+"\t"+title +"\t" + contents + "\t" + regid + "\t" + regdate);
+//		}
 //		
 //		BoardVO ovo = bdao.selectBoardOne(1);
 //		System.out.println(ovo.getSeq() + "," + ovo.getTitle());
